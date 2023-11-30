@@ -1,6 +1,7 @@
-import { Asignatura } from 'src/asignatura/entities/asignatura.entity';
-import { Tarea } from 'src/tarea/entities/tarea.entity';
-import { User } from 'src/users/entities/user.entity';
+// import { Asignatura } from 'src/asignatura/entities/asignatura.entity';
+// import { Tarea } from 'src/tarea/entities/tarea.entity';
+import { Asignatura } from 'src/components/course/entities/asignatura.entity';
+import { User } from 'src/components/users/entities/user.entity';
 import {
   Column,
   Entity,
@@ -29,14 +30,14 @@ export class Student {
   @Column({ type: 'varchar', length: 300, nullable: false })
   direccion: string;
 
-  @OneToMany(() => Tarea, (tarea) => tarea.estudiante)
-  tareas: Tarea[];
+  // @OneToMany(() => Tarea, (tarea) => tarea.estudiante)
+  // tareas: Tarea[];
 
-  @ManyToOne(()=> User, user=> user.estudiante)
+  @ManyToOne(()=> User, user=> user.student)
   @JoinColumn({name: 'user_id',})
   user:User
 
-  @ManyToOne(()=> Asignatura, asignatura=> asignatura.estudiante)
+  @ManyToOne(()=> Asignatura, asignatura=> asignatura.student)
   @JoinColumn({name: 'asignatura_id',})
   asignatura:Asignatura
 

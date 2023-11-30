@@ -2,7 +2,7 @@ import { Injectable } from '@nestjs/common';
 import { InjectRepository } from '@nestjs/typeorm';
 import { Repository } from 'typeorm';
 import { CreateStudentDto, } from '../dto/student.dto';
-import { Asignatura } from 'src/asignatura/entities/asignatura.entity';
+// import { Asignatura } from 'src/asignatura/entities/asignatura.entity';
 import { Student } from '../entities/student.entity';
 
 
@@ -26,7 +26,7 @@ export class StudentService {
 
   findAll() {
     return this.studentRepo.find({
-      relations:{user:true, tareas:true, asignatura:true}
+      relations:{ asignatura:true}
     });
   }
 

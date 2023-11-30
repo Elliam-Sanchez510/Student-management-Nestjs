@@ -1,5 +1,4 @@
 import {IsArray, IsNotEmpty, IsNumber, IsObject, IsOptional, IsString } from 'class-validator';
-// import { Asignatura } from 'src/asignatura/entities/asignatura.entity';
 
 export class CreateStudentDto {
   @IsNotEmpty()
